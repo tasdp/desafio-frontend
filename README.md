@@ -20,7 +20,8 @@ Requisitos:
 3. Eventos que ocorrem em um mesmo período devem ser apresentados de forma clara
 4. Ao clicar em um evento deverá ser mostrado suas informações
 
-Obs: levaremos em conta o layout na versão Mobile e Desktop
+Obs 1: Os campos start e finish do JSON representam minutos após a meia-noite, ou seja, caso start tenha um valor de 480, significa que o evento inicia as 8h da manhã.
+Obs 2: levaremos em conta o layout na versão Mobile e Desktop
 
 ## Serviço Rest
 
