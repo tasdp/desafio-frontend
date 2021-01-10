@@ -35,7 +35,7 @@ const Dashboard: React.FC = () => {
 
   const [eventsApi, setEventsApi] = useState([] as any)
   const [dateEvents, setDateEvents] = useState<ISDateEvents[]>([]);
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const [isDatasModal, setIsDatasModal] = useState<ISEvent>({
     id: "string",
     title: "string",
@@ -75,7 +75,6 @@ const Dashboard: React.FC = () => {
       }
     ))
      setDateEvents(newDateEvents)
-      console.log(dateEvents,"pq essa merda n da certo")
   }, []);
 
 
@@ -104,7 +103,7 @@ const Dashboard: React.FC = () => {
         aspectRatio={0.5}
         showNonCurrentDates ={true} 
     />
-    {/* <button onClick={() => console.log(dateEvents, eventsApi)}>TESTE</button> */}
+
     {openModal && 
       <ModalCalendar isDataModal={isDatasModal} infor={inforEvents} modalActive={openModal} setModalActive={setOpenModal}/> 
     }
