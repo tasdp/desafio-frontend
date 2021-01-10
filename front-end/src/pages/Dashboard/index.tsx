@@ -14,7 +14,8 @@ import 'moment/locale/pt-br';
 import mocados from '../../services/mocados'
 
 import './styles.scss'
-import ModalCalendar from '../ModalCalendar';
+import ModalCalendar from '../../components/ModalCalendar';
+import Header from '../../components/Header';
 
 
 export interface ISDateEvents {
@@ -89,6 +90,7 @@ const Dashboard: React.FC = () => {
   }, []);
   return (
     <section className="container">
+      <Header/>
       <section className="container__main">
       <FullCalendar
         plugins={[ dayGridPlugin, interactionPlugin, listPlugin ]}

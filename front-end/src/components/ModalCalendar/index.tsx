@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 
+import Close from '../../assets/close.svg'
 
 import './styles.scss'
+
 
 interface ModalCalendarProps {
   setModalActive(bool: any): void;
@@ -23,7 +25,9 @@ const ModalCalendar: React.FC<ModalCalendarProps> = ({
 
   return (
     <section className="containerModal">
-      <button onClick={() => setModalActive(false)} className="buttonClose">x</button>
+      <button onClick={() => setModalActive(false)} className="buttonClose">
+        <img src={Close} alt="" className=""/>
+      </button>
       <section className="mainModal">
         <div className="mainModal__section--top">
           <h1>
