@@ -11,11 +11,11 @@ import esLocale from '@fullcalendar/core/locales/pt-br';
 import moment from 'moment';
 import 'moment/locale/pt-br';
 
-import mocados from '../../services/mocados'
 
-import './styles.scss'
 import ModalCalendar from '../../components/ModalCalendar';
 import Header from '../../components/Header';
+
+import './styles.scss'
 
 
 export interface ISDateEvents {
@@ -32,6 +32,7 @@ export interface ISEvent {
 }
 const Dashboard: React.FC = () => {
   moment.locale('pt-br');
+
   const [eventsApi, setEventsApi] = useState([] as any)
   const [dateEvents, setDateEvents] = useState<ISDateEvents[]>([]);
   const [openModal, setOpenModal] = useState(true);
@@ -44,15 +45,6 @@ const Dashboard: React.FC = () => {
     finish: 0
   });
   const [inforEvents, setInforEvents] = useState([]);
-
-  async function handleSearch() {
-    // const { data }  = await api.get('/events');
-    // const eventsData = data;
-    console.log(2)
-    setEventsApi(mocados);
-    
-   
-  }
 
   function handleEventClick (arg: any )  {
     setOpenModal(true)
@@ -74,7 +66,9 @@ const Dashboard: React.FC = () => {
   };
 
   useEffect(() => {
-    handleSearch(); 
+    api.get('/events').then(response => {
+      setEventsApi(response.data);
+    })
     
     const newDateEvents =  eventsApi.map((event: any, i: number) => (
       {
@@ -83,16 +77,16 @@ const Dashboard: React.FC = () => {
       }
     ))
      setDateEvents(newDateEvents)
-      console.log("pq essa merda n da certo")
-
-
-
+      console.log(dateEvents,"pq essa merda n da certo")
   }, []);
+
+
   return (
     <section className="container">
       <Header/>
       <section className="container__main">
-      <FullCalendar
+        <div className="container__main--center">
+        <FullCalendar 
         plugins={[ dayGridPlugin, interactionPlugin, listPlugin ]}
         initialView="dayGridMonth"
         headerToolbar={{
@@ -105,17 +99,19 @@ const Dashboard: React.FC = () => {
           function(arg){
             handleEventClick(arg)
           }}
-
         events={dateEvents}
+   
         contentHeight={400}
         handleWindowResize={true}
         aspectRatio={0.5}
-        showNonCurrentDates ={true}
+        showNonCurrentDates ={true} 
     />
-    <button onClick={() => console.log(dateEvents, eventsApi)}>TESTE</button>
- {openModal && <ModalCalendar isDataModal={isDatasModal} infor={inforEvents} modalActive={openModal} setModalActive={setOpenModal}/> 
- 
-}
+    {/* <button onClick={() => console.log(dateEvents, eventsApi)}>TESTE</button> */}
+    {openModal && 
+      <ModalCalendar isDataModal={isDatasModal} infor={inforEvents} modalActive={openModal} setModalActive={setOpenModal}/> 
+    }
+        </div>
+
       </section>
     </section>
   )

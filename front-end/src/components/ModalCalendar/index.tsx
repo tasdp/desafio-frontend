@@ -4,6 +4,7 @@ import Close from '../../assets/close.svg'
 
 import './styles.scss'
 
+import moment from 'moment';
 
 interface ModalCalendarProps {
   setModalActive(bool: any): void;
@@ -22,6 +23,12 @@ interface ModalCalendarProps {
 const ModalCalendar: React.FC<ModalCalendarProps> = ({
   modalActive, setModalActive, infor, isDataModal
 }) => {
+
+  function getTimeFromMins(mins: number) {
+    var h = mins / 60 | 0,
+    m = mins % 60 | 0;
+    return moment.utc().hours(h).minutes(m).format("hh:mm A");
+    }
 
   return (
     <section className="containerModal">
@@ -47,11 +54,17 @@ const ModalCalendar: React.FC<ModalCalendarProps> = ({
           {isDataModal.id}
           </h3>
           </div>
-          <p>{isDataModal.description} </p>
+          
+          <p>Descrição:  {isDataModal.description} </p>
         </div>
         <div className="mainModal__section--low">
-          <p>Início:</p><p>{isDataModal.start} </p>
-         <p className="">Fim:</p> <p className="">{isDataModal.finish}</p>
+          <div>
+            <p>Início do evento:</p><p>{ getTimeFromMins(isDataModal.start)}  </p>
+          </div>
+          <div>
+            <p>Fim do evento:</p> <p className="">{getTimeFromMins(isDataModal.finish)} </p>
+          </div>
+         
         </div>
 
       </section>

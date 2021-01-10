@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
-import Close from '../../assets/close.svg'
+import Agenda from '../../assets/agenda.svg'
 
 import './styles.scss'
 
@@ -9,9 +9,13 @@ import './styles.scss'
 const Header: React.FC = () => {
 
   return (
-    <section className="containerHeader">
+    <header className="containerHeader">
+      <section className="containerHeader__main">
+        <img src={Agenda} alt="Agenda em svg"/>
         <h1>Agenda de Eventos</h1>
-    </section>
+      </section>
+       
+    </header>
   )
 
 
