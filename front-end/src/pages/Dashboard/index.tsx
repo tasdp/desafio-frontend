@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 import api from '../../services/api';
 
-import FullCalendar, { Interaction } from '@fullcalendar/react'
+import FullCalendar from '@fullcalendar/react'
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from '@fullcalendar/list';
 import dayGridPlugin from '@fullcalendar/daygrid'
@@ -61,8 +61,6 @@ const Dashboard: React.FC = () => {
      })  
       }
     });
-    console.log(arg.event.title)
-    
   };
 
   useEffect(() => {
@@ -111,7 +109,6 @@ const Dashboard: React.FC = () => {
       <ModalCalendar isDataModal={isDatasModal} infor={inforEvents} modalActive={openModal} setModalActive={setOpenModal}/> 
     }
         </div>
-
       </section>
     </section>
   )

@@ -57,6 +57,12 @@
   }
 }
 
+h1,
+h2 {
+  font-family: "Poppis" sans-serif;
+}
+
+// MODIFICANDO ESTILO DO CALENDARIO
 .fc .fc-col-header-cell-cushion {
   /* needs to be same precedence */
   padding-top: 5px; /* an override! */
@@ -86,10 +92,6 @@
   width: 95%;
 }
 
-h1,
-h2 {
-  font-family: "Poppis" sans-serif;
-}
 .fc .fc-list-empty {
   background: none;
 }
@@ -156,14 +158,18 @@ h2 {
   opacity: 0.5;
   -webkit-transform: scale(0.9);
 }
-// RESPONSIVO
+// PESPONSIVIDADE
 @media (max-width: 780px) {
+  .container__main--center {
+    padding: 10px;
+    width: 95%;
+  }
   .container__main {
     width: 90%;
   }
   .fc .fc-toolbar-title {
-    font-size: 1.2rem;
-    margin: 5px 0;
+    font-size: 1.3rem;
+    margin: 8px 0;
   }
   .fc-direction-ltr .fc-button-group > .fc-button:not(:last-child),
   .fc-direction-ltr .fc-button-group > .fc-button:not(:first-child),
