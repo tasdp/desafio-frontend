@@ -1,0 +1,105 @@
+.containerModal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 25%;
+  left: 25%;
+  z-index: 10000;
+  width: 300px;
+  height: 250px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 5px 10px #59c5ac;
+  border-radius: 50px;
+  opacity: 1;
+}
+.buttonClose {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  width: 92%;
+  margin-top: 24px;
+}
+
+.mainModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 10px 15px 15px 15px;
+  width: 100%;
+  height: 95%;
+  border-left: #4786ff;
+  border: 1px;
+  border-bottom-width: 10px;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 5px;
+
+  h1 {
+    font-size: 1rem;
+    letter-spacing: -0.04px;
+    color: #074685;
+    opacity: 1;
+    margin: 0 10px 0 0;
+  }
+  h2,
+  h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: -0.04px;
+    color: #4d4f6c;
+    opacity: 1;
+    margin: 0 10px 0 0;
+  }
+  p {
+    font-size: 0.9rem;
+    text-align: left;
+    letter-spacing: -0.04px;
+    color: #4d4f6c;
+    opacity: 1;
+    margin: 0 10px 0 0;
+  }
+
+  &__section--top {
+    display: flex;
+    justify-content: center;
+    background: #e3edff 0% 0% no-repeat padding-box;
+
+    opacity: 1;
+    align-items: center;
+  }
+  .main--left {
+    display: flex;
+
+    padding: 0 0 10px 0;
+    align-items: center;
+  }
+  &__section--main {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+  }
+  &__section--low {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0;
+    div {
+      display: flex;
+      background: #f6f9ff;
+    }
+    p {
+      color: #81828b;
+    }
+  }
+}
+// PESPONSIVIDADE
+@media (max-width: 500px) {
+  .containerModal {
+    width: 90%;
+
+    left: 5%;
+    top: 30%;
+  }
+}

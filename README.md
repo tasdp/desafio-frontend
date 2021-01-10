@@ -1,47 +1,31 @@
 # Desafio-Frontend
 
+Cinthia Andrade
 
-## Bem-vindo
+## Agenda de Eventos
 
-A TASDP é uma Startup com foco em desenvolvimento de sistemas web por demanda para áreas de saúde e industrias.
+Esta Agenda de Eventos apresenta os dados contidos no arquivo events.json.
+Data em que os eventos estão contidos: 01/2020;
 
-## Como participar
+[Click aqui](https://www.loom.com/share/1cf1900d42c348039505d198da93a4f1) para ver o vídeo de como o projeto está.
 
-* Crie um novo fork e branch com seu nome-sobrenome e faça um pull request quando estiver pronto. Iremos fazer code review.
+## Start
 
-## O desafio
+Na raiz do projeto, execute:
 
-Você deverá criar uma Agenda de Eventos e apresentar os dados contidos no arquivo events.json. Obs: você pode ser basear no Google Agenda (Mobile e Desktop)
+```
+json-server --watch rest-api/events.json
+```
 
-Requisitos:
+Em seguida, vá na pasta front-end e execute:
 
-1. A agenda deverá mostrar uma visão semanal dos eventos e ao carregar deverá ser mostrada a semana atual
-2. Deve ser possível avançar e retroceder datas
-3. Eventos que ocorrem em um mesmo período devem ser apresentados de forma clara
-4. Ao clicar em um evento deverá ser mostrado suas informações
+```
+yarn start
+```
 
-Obs 1: Os campos start e finish do JSON representam minutos após a meia-noite, ou seja, caso start tenha um valor de 480, significa que o evento inicia as 8h da manhã.
+## Bibliotecas + padrões utilizados
 
-Obs 2: levaremos em conta o layout na versão Mobile e Desktop
-
-## Serviço Rest
-
-Criar o backend não é o foco deste teste, portanto está sendo disponibilizado um serviço Rest que deve ser utilizado para recuperar a lista de produtos do projeto.
-
-Para rodar o serviço, é necessário instalar o json-server:
-
-`npm install -g json-server`
-
-Após isso, rodar o comando: `json-server --watch rest-api/events.json`
-
-Isso irá disponibilizar uma api REST rodando no endereço http://localhost:3000/events.
-
-Um produto especifico pode ser acessado através da url http://localhost:3000/events/{id};
-
-## Dicas
-
-* Tudo bem, até pode usar jquery. Se você não quiser usar (bônus), uma sugestão: Axios para a comunicação com a API.
-* HTML o mais semântico possível.
-* Branches com readme e instruções de implantação serão bem vindos.
-* Pré-processadores CSS como Stylus ou LESS também.
-* Que tal utilizar BEM nos identificadores css? http://getbem.com/naming/ 
+- [FullCalendar](https://fullcalendar.io/): Biblioteca de calendário.
+- [Axios](https://github.com/axios/axios): Para a comunicação com a API.
+- [SCSS](https://sass-lang.com/documentation/syntax): Para a estilização, + Padrão BEM para os identificadores.
+- Responsividade: Utilização de media queries + Unidades de viewport: vh, vw, %, rem.
