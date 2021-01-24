@@ -48,7 +48,8 @@ function App() {
           id: element.id,
           title: element.title,
           start: Date.parse(element.date) + element.start * 60 * 1000,
-          end: Date.parse(element.date) + element.finish * 60 * 1000
+          end: Date.parse(element.date) + element.finish * 60 * 1000,
+          description: element.description
         })
       )
 
@@ -84,7 +85,8 @@ function App() {
             title: info.event.title,
             date: formatarData(info.event.start),
             start: formatarHora(info.event.start),
-            end: formatarHora(info.event.end)
+            end: formatarHora(info.event.end),
+            description: info.event.extendedProps.description
           }
           showEvent(evento)
         }}

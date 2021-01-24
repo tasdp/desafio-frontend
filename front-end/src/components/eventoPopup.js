@@ -8,7 +8,8 @@ class EventoPopup extends React.Component {
       <div className='popup'>
         <div className='popup_inner'>
           <h1>{this.props.event.title}</h1>
-          <p>{this.props.event.id} - {this.props.event.description}</p>
+          <p>Id do Evento: {this.props.event.id}</p>
+          <p>Descrição: {this.props.event.description}</p>
           <br />
           <p>Data: {this.props.event.date}</p>
           <p>Início: {this.props.event.start}</p>
