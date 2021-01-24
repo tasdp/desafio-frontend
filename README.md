@@ -1,47 +1,34 @@
 # Desafio-Frontend
 
-
-## Bem-vindo
-
-A TASDP é uma Startup com foco em desenvolvimento de sistemas web por demanda para áreas de saúde e industrias.
-
-## Como participar
-
-* Crie um novo fork e branch com seu nome-sobrenome e faça um pull request quando estiver pronto. Iremos fazer code review.
-
 ## O desafio
 
-Você deverá criar uma Agenda de Eventos e apresentar os dados contidos no arquivo events.json. Obs: você pode ser basear no Google Agenda (Mobile e Desktop)
+Criar uma Agenda de Eventos e apresentar os dados contidos no arquivo events.json.
 
-Requisitos:
+## Requisitos:
 
-1. A agenda deverá mostrar uma visão semanal dos eventos e ao carregar deverá ser mostrada a semana atual
-2. Deve ser possível avançar e retroceder datas
-3. Eventos que ocorrem em um mesmo período devem ser apresentados de forma clara
-4. Ao clicar em um evento deverá ser mostrado suas informações
+1. [x] A agenda deverá mostrar uma visão semanal dos eventos e ao carregar deverá ser mostrada a semana atual
+2. [x] Deve ser possível avançar e retroceder datas
+3. [x] Eventos que ocorrem em um mesmo período devem ser apresentados de forma clara
+4. [x] Ao clicar em um evento deverá ser mostrado suas informações
 
-Obs 1: Os campos start e finish do JSON representam minutos após a meia-noite, ou seja, caso start tenha um valor de 480, significa que o evento inicia as 8h da manhã.
+## Como executar:
 
-Obs 2: levaremos em conta o layout na versão Mobile e Desktop
+Após clonar o repositório, é necessário instalar as dependências. A partir da pasta front-end do projeto, execute:
 
-## Serviço Rest
+`npm install`
 
-Criar o backend não é o foco deste teste, portanto está sendo disponibilizado um serviço Rest que deve ser utilizado para recuperar a lista de produtos do projeto.
+Após isso, para iniciar o json-server, execute o seguinte comando a partir da pasta raiz do projeto:
 
-Para rodar o serviço, é necessário instalar o json-server:
-
-`npm install -g json-server`
-
-Após isso, rodar o comando: `json-server --watch rest-api/events.json`
+`json-server --watch rest-api/events.json`
 
 Isso irá disponibilizar uma api REST rodando no endereço http://localhost:3000/events.
 
-Um produto especifico pode ser acessado através da url http://localhost:3000/events/{id};
+Em seguida, rodar o comando: `npm start` em outro terminal (Caso solicitado, digite 'y' para iniciar o app em outro endereço e evitar conflitos com o json-server).
 
-## Dicas
 
-* Tudo bem, até pode usar jquery. Se você não quiser usar (bônus), uma sugestão: Axios para a comunicação com a API.
-* HTML o mais semântico possível.
-* Branches com readme e instruções de implantação serão bem vindos.
-* Pré-processadores CSS como Stylus ou LESS também.
-* Que tal utilizar BEM nos identificadores css? http://getbem.com/naming/ 
+## Recursos Utilizados
+
+* FullCalendar como a base da agenda
+* Axios para requisições à API REST
+
+Obs: Para facilitar os testes, as datas dos eventos no arquivo .json foram acrescidas em 1 ano para serem mais facilmente encontradas partindo da data atual (janeiro/2021). 
